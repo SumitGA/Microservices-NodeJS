@@ -5,7 +5,8 @@ const cors = require('cors');
 const { default: axios } = require('axios');
 
 const app = express();
-app.use(bodyParser.json());
+
+app.use(express.json())
 app.use(cors());
 
 const posts = {};
@@ -31,6 +32,11 @@ app.post('/posts', async (req, res) => {
 
   res.status(201).send(posts[id]);
 });
+
+app.post('/events', (req, res) => {
+  console.log('ReceivedEvent', req.body.type);
+  res.send({});
+})
 
 app.listen(4000, () => {
 	console.log('Listening on port 4000');

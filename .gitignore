@@ -3,4 +3,5 @@ node_modules
 clients/node_modules/*
 posts/node_modules/*
 comments/node_modules/*
+query/node_modules/*
 
